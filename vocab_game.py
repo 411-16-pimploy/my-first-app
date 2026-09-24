@@ -27,7 +27,7 @@ def reset_game():
 # 📌 ฟังก์ชัน MessageBox (Dialog)
 # ----------------------------------------------------
 @st.dialog("📊 สรุปผลการเล่นเกม")
-def show_result_dialog(ans1, ans2):
+def show_result_dialog(ans1, ans2, ans3, ans4):
     st.balloons()
     score = 0
 
@@ -51,7 +51,7 @@ def show_result_dialog(ans1, ans2):
     else:
         st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
         
-         # ตรวจข้อ 3
+     # ตรวจข้อ 3
     if u_ans3 == "lemon":
         st.success("✅ ข้อ 3: ถูกต้อง")
         score += 1
@@ -59,7 +59,7 @@ def show_result_dialog(ans1, ans2):
         st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
 
     # ตรวจข้อ 4
-    if u_ans2 == "key":
+    if u_ans4 == "key":
         st.success("✅ ข้อ 4: ถูกต้อง")
         score += 1
     else:
@@ -128,7 +128,7 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
 
 # 5. แสดง Dialog ผลลัพธ์
 if st.session_state.get("is_ended", False):
-    show_result_dialog(ans1, ans2, ans3, ans4)
+def show_result_dialog(ans1, ans2, ans3, ans4):
 
 st.divider()
 st.write("นางสาวพิมส์พลอย สู่ทรัพย์ เลขที่ 16 ม.4/11")
